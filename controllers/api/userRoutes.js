@@ -8,7 +8,7 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-
+    console.log(userData);
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -21,8 +21,12 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+  console.log("login")
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
+    console.log(userData)
+    // ("login") - this means a string which is console logging the word in the code above.
+    // the (userData) -text is blue inside means that its console logging an expression NOT a string. 
 
     if (!userData) {
       res
@@ -31,8 +35,10 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
-
+    const validPassword = await 
+    userData.checkPassword(req.body.password);
+    console.log(validPassword)
+    console.log(req.body)
     if (!validPassword) {
       res
         .status(400)

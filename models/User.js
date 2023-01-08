@@ -11,7 +11,7 @@ class User extends Model {
   }
 }
 // this code above is saying: the code is checking the password that has been logged in and it will return with bcrypt password and will compareSync with the login pw and the bcrypted password. checking the password means the software is checking to make sure the password is correct or the wrong password.
- 
+
 User.init(
   {
     id: {
@@ -31,6 +31,13 @@ User.init(
         len: [8],
         // len= length of the characters for the password
       },
+
+    },
+    
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
     },
   },
   {

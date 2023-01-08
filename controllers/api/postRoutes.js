@@ -4,13 +4,14 @@ const withAuth = require('../../utils/auth');
 // withAuth means its authenticating that the user cannot make a post without being logged in 
 
 router.post('/', withAuth, async (req, res) => {
+  console.log("post")
+  console.log(req.body)
   // try means it will validate if the code runs correctly
   try {
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
     });
-
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
