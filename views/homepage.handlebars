@@ -1,9 +1,11 @@
-<!-- Loop over each object in the projects array -->
-
 
 {{#each posts as |post| }}
     <div class="containerTechparent">
-      <div class="containerChildone">{{post.title}}</div>
+      <div class="containerChildone"> 
+      <div class="containerTitle"><a href="/addcomment/{{post.id}}">{{post.title}}</a></div>
+      <div class="containerDate">
+        posted by {{post.user.name}} on {{format_date  post.date_created}}</div>
+     </div>
       <div class="containerChildtwo">{{post.content}}</div>
     </div> 
     {{!-- #each posts means the FULL TABLE of content the posts and then the |post| means SPECIFICALLY EACH of the {} brackets of information inside WHICH MEANS a SINGLE row of info.   --}}

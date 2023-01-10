@@ -46,6 +46,8 @@ nav a, nav button {
   color: black;
   padding: 8px 4px;
   font-weight: bold; 
+  display: flex;
+  justify-content: space-between;
 }
 
 .containerChildtwo {

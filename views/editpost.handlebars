@@ -1,0 +1,32 @@
+<div class="row">
+
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Edit Blog Post:</h3>
+
+    <form class="form edit-post-form">
+      <div class="form-group">
+        <label for="post-name">Edit Blog Post Name:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" value=" {{title}}" />
+        <input type="hidden" 
+        value="{{id}}" name = "post-id" id="post-id">
+      </div>
+      
+      <div class="form-group">
+        <label for="post-desc">Content:</label>
+        <textarea class="form-input" id="post-desc" name="post-desc"> {{content}}</textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+      <div class="formdelete-group">
+        <button id="deletebutton"  class="btn btn-primary">Delete</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/editpost.js"></script>
+

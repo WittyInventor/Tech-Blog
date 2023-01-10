@@ -1,0 +1,27 @@
+
+    <div class="containerTechparent">
+      <div class="containerChildone"> 
+      <div class="containerTitle">{{title}}</div>
+      <div class="containerDate">
+        posted by {{user.name}} on {{date_created}}</div>
+     </div>
+      <div class="containerChildtwo">{{content}}</div>
+    </div> 
+    <div class="comment">{{comments}}</div>
+<form class="form new-comment-form">
+    <input type="hidden" value="{{id}}"name="post-id" id="post-id">
+
+
+    <div class="containerTechparent">
+      <div class="containerChildone"> 
+      Comments
+     </div>
+      <div class="containerChildtwo"><textarea name="newcomment" id="newcomment" cols="30" rows="10"></textarea></div>
+
+      <div class="containerChildtwo"><button type="submit">Submit Comment</button></div>
+    </div> 
+
+   
+</form>
+
+<script src="../js/newcomment.js"></script>

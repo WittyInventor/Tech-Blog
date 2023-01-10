@@ -3,12 +3,13 @@
 
 {{#each posts as |post| }}
     <div class="containerTechparent">
-      <div class="containerChildone">{{post.title}}</div>
+      <a href="/editpost/{{post.id}}"><div class="containerChildone">{{post.title}}</div></a>
+      
       
     </div> 
     {{!-- #each posts means the FULL TABLE of content the posts and then the |post| means SPECIFICALLY EACH of the {} brackets of information inside WHICH MEANS a SINGLE row of info.   --}}
     {{/each}}
     <div class = "newpostHolder">
-    <a class = "newpost" href="/newpost">+New Post</a> 
+    <a class = "newpost" href="/profilenewpost">+New Post</a> 
     </div>
 
