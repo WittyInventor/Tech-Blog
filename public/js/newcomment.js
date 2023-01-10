@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
   const content = document.querySelector('#newcomment').value.trim();
 
   const post_id = document.querySelector('#post-id').value.trim();
-
+console.log(content, post_id)
   if (content && post_id) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
@@ -13,7 +13,7 @@ const newFormHandler = async (event) => {
         'Content-Type': 'application/json',
       },
     });
-
+console.log(response)
     if (response.ok) {
       // document.location.replace('/');
     } else {

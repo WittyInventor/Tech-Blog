@@ -47,7 +47,7 @@ router.get('/addcomment/:id', async (req, res) => {
         },
       ],
     });
-    console.log(postData)
+    // console.log(postData)
     // Serialize data so the template can read it
     const post = postData.get({ plain: true });
     // this code above means to input the blog information where it will convert to plain text

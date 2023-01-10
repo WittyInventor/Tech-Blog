@@ -7,7 +7,11 @@
      </div>
       <div class="containerChildtwo">{{content}}</div>
     </div> 
-    <div class="comment">{{comments}}</div>
+    {{log comments}}
+    {{#each comments as | comment | }}
+    <div class="comment">{{comment.content}} </div>
+    {{/each}}
+
 <form class="form new-comment-form">
     <input type="hidden" value="{{id}}"name="post-id" id="post-id">
 
@@ -23,5 +27,6 @@
 
    
 </form>
+    
 
 <script src="../js/newcomment.js"></script>

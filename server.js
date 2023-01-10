@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers });
 const sess = {
   secret: 'secretsanta',
   cookie: {
-    maxAge: 300000,
+    maxAge: 3000000,
     // maxAge means the length of time - will last 300,000 seconds
     httpOnly: true,
     secure: false,
