@@ -43,11 +43,11 @@ router.get('/addcomment/:id', async (req, res) => {
         },
         {
           model: Comments,
-          attributes: ['content'],
+          attributes: ['content', 'date_created','user_id'],
         },
       ],
     });
-    // console.log(postData)
+    console.log(postData)
     // Serialize data so the template can read it
     const post = postData.get({ plain: true });
     // this code above means to input the blog information where it will convert to plain text

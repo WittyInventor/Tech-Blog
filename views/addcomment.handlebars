@@ -3,15 +3,31 @@
       <div class="containerChildone"> 
       <div class="containerTitle">{{title}}</div>
       <div class="containerDate">
-        posted by {{user.name}} on {{date_created}}</div>
+        posted by {{user.name}} on {{format_date date_created}}</div>
      </div>
+     {{!-- format_date is connected to helpers.js --}}
       <div class="containerChildtwo">{{content}}</div>
     </div> 
-    {{log comments}}
+    <div class="containComments">
     {{#each comments as | comment | }}
-    <div class="comment">{{comment.content}} </div>
-    {{/each}}
+    
+      
+      <div class="containerTechparent">
+        <div class="containerChildone"> 
+          <div class="containerTitle">{{comment.content}}</div>
+          <div class="containerDate">
+        comment by {{comment.user_id}} on {{format_date comment.date_created}} 
+          </div>
+        </div>
+      </div>
+     {{!-- format_date is connected to helpers.js --}}
+      
+    
+    
+    
 
+    {{/each}}
+    </div>
 <form class="form new-comment-form">
     <input type="hidden" value="{{id}}"name="post-id" id="post-id">
 
